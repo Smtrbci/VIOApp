@@ -3,30 +3,81 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		589223E82D691BA600DE9845 /* GenderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589223E72D691BA600DE9845 /* GenderModel.swift */; };
+		589223EC2D692D3800DE9845 /* ViOPopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 589223EB2D692D3800DE9845 /* ViOPopUp.storyboard */; };
+		589223F02D6A882C00DE9845 /* ViOPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589223EF2D6A882C00DE9845 /* ViOPopUpViewController.swift */; };
+		58AC067E2D93478700023211 /* ViO_Date.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58AC067C2D93478700023211 /* ViO_Date.xcdatamodeld */; };
+		58AC06872D934B9500023211 /* BmiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AC06862D934B9500023211 /* BmiDataManager.swift */; };
+		58AC06B22D9C35D100023211 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AC06B12D9C35D100023211 /* InfoViewController.swift */; };
+		58AC06B82D9C68EC00023211 /* InfoCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AC06B72D9C68EC00023211 /* InfoCategory.swift */; };
+		58AC06BA2D9C6C1800023211 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AC06B92D9C6C1800023211 /* InfoTableViewCell.swift */; };
+		58D48BEE2D6B254F0070AA1F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D48BED2D6B254F0070AA1F /* UIColor+Extension.swift */; };
+		58D48BF12D6B90320070AA1F /* BmiCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D48BF02D6B90320070AA1F /* BmiCategory.swift */; };
+		58FFFD292D8E57DC004B1383 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FFFD282D8E57DC004B1383 /* ProfileTableViewController.swift */; };
+		58FFFD2B2D8E59E3004B1383 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FFFD2A2D8E59E3004B1383 /* ProfileTableViewCell.swift */; };
+		6C41EEF72D687AFB0097C49E /* GenderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C41EEF62D687AFB0097C49E /* GenderCollectionViewCell.swift */; };
 		6CFA8B472D65D2A500E3D4F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFA8B462D65D2A500E3D4F2 /* AppDelegate.swift */; };
 		6CFA8B492D65D2A500E3D4F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFA8B482D65D2A500E3D4F2 /* SceneDelegate.swift */; };
 		6CFA8B4B2D65D2A500E3D4F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFA8B4A2D65D2A500E3D4F2 /* ViewController.swift */; };
 		6CFA8B4E2D65D2A500E3D4F2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6CFA8B4D2D65D2A500E3D4F2 /* Base */; };
-		6CFA8B512D65D2A500E3D4F2 /* ViO_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6CFA8B4F2D65D2A500E3D4F2 /* ViO_App.xcdatamodeld */; };
 		6CFA8B532D65D2A700E3D4F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CFA8B522D65D2A700E3D4F2 /* Assets.xcassets */; };
 		6CFA8B562D65D2A700E3D4F2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6CFA8B552D65D2A700E3D4F2 /* Base */; };
+		6CFA8B5E2D65D39D00E3D4F2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFA8B5D2D65D39D00E3D4F2 /* SettingsViewController.swift */; };
+		6CFA8B652D66019700E3D4F2 /* ViewTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFA8B642D66019700E3D4F2 /* ViewTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		589223E72D691BA600DE9845 /* GenderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderModel.swift; sourceTree = "<group>"; };
+		589223EB2D692D3800DE9845 /* ViOPopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ViOPopUp.storyboard; sourceTree = "<group>"; };
+		589223EF2D6A882C00DE9845 /* ViOPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViOPopUpViewController.swift; sourceTree = "<group>"; };
+		58AC067D2D93478700023211 /* ViO_Date.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ViO_Date.xcdatamodel; sourceTree = "<group>"; };
+		58AC06862D934B9500023211 /* BmiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmiDataManager.swift; sourceTree = "<group>"; };
+		58AC06B12D9C35D100023211 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		58AC06B72D9C68EC00023211 /* InfoCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCategory.swift; sourceTree = "<group>"; };
+		58AC06B92D9C6C1800023211 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		58D48BED2D6B254F0070AA1F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		58D48BF02D6B90320070AA1F /* BmiCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmiCategory.swift; sourceTree = "<group>"; };
+		58FFFD282D8E57DC004B1383 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		58FFFD2A2D8E59E3004B1383 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		6C41EEF62D687AFB0097C49E /* GenderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderCollectionViewCell.swift; sourceTree = "<group>"; };
 		6CFA8B432D65D2A500E3D4F2 /* ViO_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViO_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CFA8B462D65D2A500E3D4F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CFA8B482D65D2A500E3D4F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6CFA8B4A2D65D2A500E3D4F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6CFA8B4D2D65D2A500E3D4F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6CFA8B502D65D2A500E3D4F2 /* ViO_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ViO_App.xcdatamodel; sourceTree = "<group>"; };
 		6CFA8B522D65D2A700E3D4F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CFA8B552D65D2A700E3D4F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6CFA8B572D65D2A700E3D4F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CFA8B5D2D65D39D00E3D4F2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		6CFA8B642D66019700E3D4F2 /* ViewTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		58AC06B62D9C35FE00023211 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				InfoPopUp.storyboard,
+			);
+			target = 6CFA8B422D65D2A500E3D4F2 /* ViO_App */;
+		};
+		58FE71A82D9DE3130098FF9D /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ShareView.storyboard,
+			);
+			target = 6CFA8B422D65D2A500E3D4F2 /* ViO_App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		58AC06B32D9C35E800023211 /* InfoPopUp */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (58AC06B62D9C35FE00023211 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = InfoPopUp; sourceTree = "<group>"; };
+		58FE71A42D9DE2F20098FF9D /* ShareView */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (58FE71A82D9DE3130098FF9D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ShareView; sourceTree = "<group>"; };
+		58FE71A92D9DE8360098FF9D /* ShareViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ShareViewController; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6CFA8B402D65D2A500E3D4F2 /* Frameworks */ = {
@@ -39,6 +90,98 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		589223E52D691B6A00DE9845 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				58AC067F2D9347D800023211 /* UserDate */,
+				58D48BEF2D6B8FEF0070AA1F /* BmiCatogory */,
+				58D48BE62D6B22960070AA1F /* Color */,
+				589223E62D691B9300DE9845 /* Gender */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		589223E62D691B9300DE9845 /* Gender */ = {
+			isa = PBXGroup;
+			children = (
+				589223E72D691BA600DE9845 /* GenderModel.swift */,
+			);
+			path = Gender;
+			sourceTree = "<group>";
+		};
+		589223E92D692D0800DE9845 /* ViOPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				589223EB2D692D3800DE9845 /* ViOPopUp.storyboard */,
+			);
+			path = ViOPopUp;
+			sourceTree = "<group>";
+		};
+		589223ED2D6A875E00DE9845 /* ViOPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				589223EF2D6A882C00DE9845 /* ViOPopUpViewController.swift */,
+			);
+			path = ViOPopUp;
+			sourceTree = "<group>";
+		};
+		58AC067F2D9347D800023211 /* UserDate */ = {
+			isa = PBXGroup;
+			children = (
+				58AC06862D934B9500023211 /* BmiDataManager.swift */,
+			);
+			path = UserDate;
+			sourceTree = "<group>";
+		};
+		58D48BE62D6B22960070AA1F /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				58D48BED2D6B254F0070AA1F /* UIColor+Extension.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		58D48BEF2D6B8FEF0070AA1F /* BmiCatogory */ = {
+			isa = PBXGroup;
+			children = (
+				58D48BF02D6B90320070AA1F /* BmiCategory.swift */,
+				58AC06B72D9C68EC00023211 /* InfoCategory.swift */,
+			);
+			path = BmiCatogory;
+			sourceTree = "<group>";
+		};
+		58FFFD272D8E57A0004B1383 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				58FFFD282D8E57DC004B1383 /* ProfileTableViewController.swift */,
+				58AC06B12D9C35D100023211 /* InfoViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		6C41EEF52D687AC80097C49E /* ViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6C41EEF62D687AFB0097C49E /* GenderCollectionViewCell.swift */,
+				58FFFD2A2D8E59E3004B1383 /* ProfileTableViewCell.swift */,
+				58AC06B92D9C6C1800023211 /* InfoTableViewCell.swift */,
+			);
+			path = ViewCell;
+			sourceTree = "<group>";
+		};
+		6C41EEF82D6917290097C49E /* SupportingFile */ = {
+			isa = PBXGroup;
+			children = (
+				6CFA8B462D65D2A500E3D4F2 /* AppDelegate.swift */,
+				6CFA8B482D65D2A500E3D4F2 /* SceneDelegate.swift */,
+				6CFA8B522D65D2A700E3D4F2 /* Assets.xcassets */,
+				6CFA8B542D65D2A700E3D4F2 /* LaunchScreen.storyboard */,
+				6CFA8B572D65D2A700E3D4F2 /* Info.plist */,
+				58AC067C2D93478700023211 /* ViO_Date.xcdatamodeld */,
+			);
+			path = SupportingFile;
+			sourceTree = "<group>";
+		};
 		6CFA8B3A2D65D2A500E3D4F2 = {
 			isa = PBXGroup;
 			children = (
@@ -58,16 +201,45 @@
 		6CFA8B452D65D2A500E3D4F2 /* ViO_App */ = {
 			isa = PBXGroup;
 			children = (
-				6CFA8B462D65D2A500E3D4F2 /* AppDelegate.swift */,
-				6CFA8B482D65D2A500E3D4F2 /* SceneDelegate.swift */,
-				6CFA8B4A2D65D2A500E3D4F2 /* ViewController.swift */,
-				6CFA8B4C2D65D2A500E3D4F2 /* Main.storyboard */,
-				6CFA8B522D65D2A700E3D4F2 /* Assets.xcassets */,
-				6CFA8B542D65D2A700E3D4F2 /* LaunchScreen.storyboard */,
-				6CFA8B572D65D2A700E3D4F2 /* Info.plist */,
-				6CFA8B4F2D65D2A500E3D4F2 /* ViO_App.xcdatamodeld */,
+				589223E52D691B6A00DE9845 /* Model */,
+				6C41EEF82D6917290097C49E /* SupportingFile */,
+				6C41EEF52D687AC80097C49E /* ViewCell */,
+				6CFA8B632D66012300E3D4F2 /* Controller */,
+				6CFA8B622D65F97400E3D4F2 /* ViewController */,
+				6CFA8B612D65F96500E3D4F2 /* View */,
 			);
 			path = ViO_App;
+			sourceTree = "<group>";
+		};
+		6CFA8B612D65F96500E3D4F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				58FE71A42D9DE2F20098FF9D /* ShareView */,
+				58AC06B32D9C35E800023211 /* InfoPopUp */,
+				589223E92D692D0800DE9845 /* ViOPopUp */,
+				6CFA8B4C2D65D2A500E3D4F2 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6CFA8B622D65F97400E3D4F2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				58FE71A92D9DE8360098FF9D /* ShareViewController */,
+				58FFFD272D8E57A0004B1383 /* Profile */,
+				589223ED2D6A875E00DE9845 /* ViOPopUp */,
+				6CFA8B4A2D65D2A500E3D4F2 /* ViewController.swift */,
+				6CFA8B5D2D65D39D00E3D4F2 /* SettingsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		6CFA8B632D66012300E3D4F2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6CFA8B642D66019700E3D4F2 /* ViewTabBarController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +256,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				58FE71A92D9DE8360098FF9D /* ShareViewController */,
 			);
 			name = ViO_App;
 			productName = ViO_App;
@@ -128,6 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				589223EC2D692D3800DE9845 /* ViOPopUp.storyboard in Resources */,
 				6CFA8B532D65D2A700E3D4F2 /* Assets.xcassets in Resources */,
 				6CFA8B562D65D2A700E3D4F2 /* Base in Resources */,
 				6CFA8B4E2D65D2A500E3D4F2 /* Base in Resources */,
@@ -141,9 +317,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				589223E82D691BA600DE9845 /* GenderModel.swift in Sources */,
+				58AC067E2D93478700023211 /* ViO_Date.xcdatamodeld in Sources */,
+				6CFA8B652D66019700E3D4F2 /* ViewTabBarController.swift in Sources */,
+				58D48BF12D6B90320070AA1F /* BmiCategory.swift in Sources */,
+				58AC06B22D9C35D100023211 /* InfoViewController.swift in Sources */,
+				58D48BEE2D6B254F0070AA1F /* UIColor+Extension.swift in Sources */,
+				58AC06BA2D9C6C1800023211 /* InfoTableViewCell.swift in Sources */,
+				58FFFD292D8E57DC004B1383 /* ProfileTableViewController.swift in Sources */,
+				58AC06B82D9C68EC00023211 /* InfoCategory.swift in Sources */,
 				6CFA8B4B2D65D2A500E3D4F2 /* ViewController.swift in Sources */,
 				6CFA8B472D65D2A500E3D4F2 /* AppDelegate.swift in Sources */,
-				6CFA8B512D65D2A500E3D4F2 /* ViO_App.xcdatamodeld in Sources */,
+				58FFFD2B2D8E59E3004B1383 /* ProfileTableViewCell.swift in Sources */,
+				589223F02D6A882C00DE9845 /* ViOPopUpViewController.swift in Sources */,
+				58AC06872D934B9500023211 /* BmiDataManager.swift in Sources */,
+				6C41EEF72D687AFB0097C49E /* GenderCollectionViewCell.swift in Sources */,
+				6CFA8B5E2D65D39D00E3D4F2 /* SettingsViewController.swift in Sources */,
 				6CFA8B492D65D2A500E3D4F2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,9 +485,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L2BC3BCGCC;
+				DEVELOPMENT_TEAM = 4D339RXXN8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ViO_App/Info.plist;
+				INFOPLIST_FILE = /Users/sametarabaci/Documents/swift_project/ViO_App/ViO_App/SupportingFile/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -324,9 +513,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L2BC3BCGCC;
+				DEVELOPMENT_TEAM = 4D339RXXN8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ViO_App/Info.plist;
+				INFOPLIST_FILE = /Users/sametarabaci/Documents/swift_project/ViO_App/ViO_App/SupportingFile/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -369,13 +558,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		6CFA8B4F2D65D2A500E3D4F2 /* ViO_App.xcdatamodeld */ = {
+		58AC067C2D93478700023211 /* ViO_Date.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				6CFA8B502D65D2A500E3D4F2 /* ViO_App.xcdatamodel */,
+				58AC067D2D93478700023211 /* ViO_Date.xcdatamodel */,
 			);
-			currentVersion = 6CFA8B502D65D2A500E3D4F2 /* ViO_App.xcdatamodel */;
-			path = ViO_App.xcdatamodeld;
+			currentVersion = 58AC067D2D93478700023211 /* ViO_Date.xcdatamodel */;
+			path = ViO_Date.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
