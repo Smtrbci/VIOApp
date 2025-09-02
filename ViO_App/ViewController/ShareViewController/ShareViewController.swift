@@ -5,6 +5,8 @@
 //  Created by Samet Arabacı on 3.04.2025.
 //
 
+import FirebaseAnalytics
+
 import UIKit
 
 class ShareViewController: UIViewController {
@@ -21,6 +23,10 @@ class ShareViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        Analytics.logEvent("share_view_shown", parameters: [
+            "screen": "ShareViewController"
+        ])
+
         initUI()
         updateUI()
         UIText()
@@ -34,26 +40,31 @@ class ShareViewController: UIViewController {
     
     func UIText(){
         textLabel.text = "Sen de hesaplamak ister misin? 📲"
+        textLabel.textColor = UIColor(named: "CustomBackgroundColor")
         textLabel.numberOfLines = 0
         sharesubjectLabel.numberOfLines = 0
         sharebmiLabel.numberOfLines = 0
         textLabel.lineBreakMode = .byWordWrapping
         sharesubjectLabel.lineBreakMode = .byWordWrapping
+        sharesubjectLabel.textColor = UIColor(named: "CustomBackgroundColor")
         sharebmiLabel.lineBreakMode = .byWordWrapping
     }
 
     
     func setShareContent(bmi: Double, description: String) {
         sharebmiLabel.text = String(format: "Benim BMI sonucum: %.2f kg/m² 📊", bmi)
+        sharebmiLabel.textColor = UIColor(named: "CustomBackgroundColor")
         sharesubjectLabel.text = description
     }
     
     func updateUI() {
             if let bmi = bmiValue {
                 sharebmiLabel.text = String(format: "Benim BMI sonucum: %.2f kg/m² 📊", bmi)
+                sharebmiLabel.textColor = UIColor(named: "CustomBackgroundColor")
             }
             if let description = descriptionText {
                 sharesubjectLabel.text = description
+                sharebmiLabel.textColor = UIColor(named: "CustomBackgroundColor")
             }
         }
     

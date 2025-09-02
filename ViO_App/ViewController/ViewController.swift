@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAnalytics
+import FirebaseCrashlytics
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource
 {
@@ -48,6 +50,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         weightPicker.delegate = self
         weightPicker.dataSource = self
+        
+        Analytics.setUserID("tester_\(UUID().uuidString.prefix(8))")
+        Analytics.setUserProperty("iOS", forName: "platform")
+        Analytics.logEvent("app_start", parameters: [
+                        "screen": "ViewController",
+                        "timestamp":"\(Date())"
+        ])
         
         NotificationCenter.default.addObserver(self, selector: #selector(unitSystemChanged), name: Notification.Name("UnitSystemChanged"), object: nil)
         
@@ -128,6 +137,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func applyUnitSystem(_ unit: String) {
+        
+        Analytics.logEvent("unit_selected", parameters: [
+            "unit": unit // metric / imperial
+        ])
+        
         if unit == "metric" {
             heightLabel.text = "Boy"
             weightLabel.text = "Kilo"
@@ -165,6 +179,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        Analytics.logEvent("gender_selected", parameters: [
+            "selected_gender_index": indexPath.row
+        ])
+        
         if selectedGenderIndex == indexPath{
             selectedGenderIndex = nil
         } else {
@@ -205,6 +224,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let unit = UserDefaults.standard.string(forKey: "unitSystem") ?? "metric"
+        
+        Analytics.logEvent("height_or_weight_selected", parameters: [
+            "picker_type": pickerView == heightPicker ? "height" : "weight",
+            "value": pickerView == heightPicker
+                ? (UserDefaults.standard.string(forKey: "unitSystem") == "metric" ? heightArry[row] : heightArrayInch[row])
+                : (UserDefaults.standard.string(forKey: "unitSystem") == "metric" ? weightArry[row] : weightArrayLbs[row])
+        ])
+        
         if pickerView == heightPicker {
             let value = unit == "metric" ? "Boyum: \(heightArry[row]) cm" : "Boyum: \(heightArrayInch[row]) in"
                 heightLabel.text = value
@@ -216,6 +243,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBAction func negativeButtonTapped(_ sender: Any) {
         
+        Analytics.logEvent("age_changed", parameters: [
+            "new_age": age
+        ])
+        
         var age = Int(ageLabel.text ?? "0") ?? 0
         if age > 1 {
             age -= 1
@@ -225,6 +256,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
     }
     @IBAction func positiveButtonTapped(_ sender: Any) {
+        
+        Analytics.logEvent("age_changed", parameters: [
+            "new_age": age
+        ])
         
         var age = Int(ageLabel.text ?? "0") ?? 0
         if age < 120 {
@@ -252,6 +287,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     @IBAction func vioButtonTapped(_ sender: Any) {
+        let error = NSError(domain: "ViO_App", code: 1001, userInfo: [
+            NSLocalizedDescriptionKey: "Cinsiyet veya yaş girilmedi"
+        ])
+        Crashlytics.crashlytics().record(error: error)
+        
+        
         guard (selectedGenderIndex != nil) else {
                 showAlert(message: "Cinsiyet seçiniz.")
                 return
@@ -263,9 +304,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             }
             
             let bmi = calculateBmi()
+        
+            Analytics.logEvent("bmi_calculated", parameters: [
+                "selected_gender": selectedGenderIndex?.row ?? -1,
+                "age": ageValue ?? 0,
+                "bmi_value": bmi
+            ])
             
             let bmiString = String(format: "%.2f", bmi)
             let category = BmiCategory.getCategory(for: bmi)?.category ?? "Bilinmiyor"
+        
+            Analytics.logEvent("bmi_category_detected", parameters: [
+                "category": category
+            ])
             
             
             if let profileVC = navigationController?.viewControllers.first(where: { $0 is ProfileTableViewController }) as? ProfileTableViewController {
@@ -277,6 +328,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 vioVC.currentBmiValue = bmi
                 vioVC.modalPresentationStyle = .overFullScreen
                 vioVC.modalTransitionStyle = .crossDissolve
+                Analytics.logEvent("popup_shown", parameters: [
+                    "screen": "ViOPopUpViewController"
+                ])
                 present(vioVC, animated: true, completion: nil)
             }
     }

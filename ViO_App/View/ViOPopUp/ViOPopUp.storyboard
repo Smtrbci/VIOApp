@@ -55,7 +55,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VGu-ex-EwV">
-                                                <rect key="frame" x="131" y="226.33333333333334" width="30" height="30"/>
+                                                <rect key="frame" x="131" y="226.33333333333334" width="30" height="30.000000000000028"/>
                                                 <color key="tintColor" name="CellBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="ARS-ss-XVB"/>

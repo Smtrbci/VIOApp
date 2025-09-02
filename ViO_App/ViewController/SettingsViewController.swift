@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAnalytics
+import FirebaseCrashlytics
 
 class SettingsViewController: UIViewController {
 
@@ -30,6 +32,10 @@ class SettingsViewController: UIViewController {
         let savedUnitSystem = UserDefaults.standard.string(forKey: "unitSystem") ?? "metric"
         birimLabel.text = savedUnitSystem == "metric" ? "Metric" : "Imperial"
         
+        Analytics.logEvent("unit_loaded", parameters: [
+            "unit": savedUnitSystem
+        ])
+        
         NotificationCenter.default.post(name: Notification.Name("UnitSystemChanged"), object: nil)
         
         let tapMetric = UITapGestureRecognizer(target: self, action: #selector(metricViewTapped))
@@ -43,11 +49,17 @@ class SettingsViewController: UIViewController {
         let metricAction = UIAlertAction(title: "Metric (kg/cm)", style: .default){
             _ in UserDefaults.standard.set("metric", forKey: "unitSystem")
             self.birimLabel.text = "Metric"
+            Analytics.logEvent("unit_selected", parameters: [
+                "unit": "metric"
+            ])
             NotificationCenter.default.post(name: Notification.Name("UnitSystemChanged"), object: nil)
         }
         let imperialAction = UIAlertAction(title: "Imperial (lbs/inch)", style: .default){
             _ in  UserDefaults.standard.set("imperial", forKey: "unitSystem")
             self.birimLabel.text = "Imperial"
+            Analytics.logEvent("unit_selected", parameters: [
+                "unit": "imperial"
+            ])
             NotificationCenter.default.post(name: Notification.Name("UnitSystemChanged"), object: nil)
         }
         

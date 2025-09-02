@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAnalytics
 
 class InfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -29,6 +30,10 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
         closePopUp()
         
         isModalInPresentation = true
+        
+        Analytics.logEvent("info_view_shown", parameters: [
+            "screen": "InfoViewController"
+        ])
     
     }
     
@@ -53,6 +58,9 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @objc func closeInfo() {
+        Analytics.logEvent("info_view_closed", parameters: [
+            "screen": "InfoViewController"
+        ])
         dismiss(animated: true, completion: nil)
     }
     

@@ -7,6 +7,8 @@
 
 import UIKit
 import CoreData
+import FirebaseCrashlytics
+import FirebaseAnalytics
 
 class ProfileTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ProfileTableViewCellDelegate  {
     
@@ -24,6 +26,9 @@ class ProfileTableViewController: UIViewController, UITableViewDelegate, UITable
     
         override func viewDidLoad() {
             super.viewDidLoad()
+            Analytics.logEvent("profile_view_shown", parameters: [
+                "screen": "ProfileTableViewController"
+            ])
             loadBmiData()
             tableView.delegate = self
             tableView.dataSource = self
@@ -62,12 +67,17 @@ class ProfileTableViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func showCustomInfoPopUp(){
+        Crashlytics.crashlytics().log("InfoViewController basıldı")
+        Analytics.logEvent("info_popup_triggered", parameters: [
+            "source": "ProfileTableViewController"
+        ])
         let storyboard = UIStoryboard(name: "InfoPopUp", bundle: nil)
         if let popupVC = storyboard.instantiateViewController(withIdentifier: "InfoViewController") as? InfoViewController {
             popupVC.modalPresentationStyle = .overFullScreen
             popupVC.modalTransitionStyle = .crossDissolve
             present(popupVC, animated: true, completion: nil)
-        }}
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)

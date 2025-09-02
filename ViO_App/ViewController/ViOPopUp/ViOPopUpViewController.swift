@@ -8,6 +8,8 @@
 // ViOPopUpViewController.swift
 
 import UIKit
+import FirebaseAnalytics
+import FirebaseCrashlytics
 
 class ViOPopUpViewController: UIViewController {
     
@@ -27,6 +29,10 @@ class ViOPopUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Analytics.logEvent("popup_view_shown", parameters: [
+            "screen": "ViOPopUpViewController"
+        ])
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closePopUp))
         xMarkImage.isUserInteractionEnabled = true // image etkilişim izini verdim
@@ -99,6 +105,11 @@ class ViOPopUpViewController: UIViewController {
     }
     
     @objc func bookmarkPopUp(){
+        
+        Analytics.logEvent("bookmark_toggled", parameters: [
+            "state": isBookmarked ? "removed" : "added"
+        ])
+        
         isBookmarked.toggle()
         
         if isBookmarked {
@@ -116,12 +127,20 @@ class ViOPopUpViewController: UIViewController {
         let category = BmiCategory.getCategory(for: bmiValue)?.category ?? "Bilinmiyor"
         BmiDataManager.saveBmiResult(bmi: bmiValue, category: category)
         
+        Analytics.logEvent("bmi_saved", parameters: [
+            "bmi": bmiValue,
+            "category": category
+        ])
+        
         print("BMI sonucu kaydedildi: \(bmiValue) - \(category)")
     }
     
     func removeBmi() {
         guard let bmiValue = currentBmiValue else { return }
         BmiDataManager.clearBmiResults(for: bmiValue)
+        Analytics.logEvent("bmi_removed", parameters: [
+            "bmi": bmiValue
+        ])
         print("BMI sonucu silindi.")
     }
     
@@ -133,9 +152,12 @@ class ViOPopUpViewController: UIViewController {
     }
     
     @objc func sharePopUp() {
+        
+        Analytics.logEvent("bmi_shared", parameters: [
+            "bmi_value": currentBmiValue ?? -1
+        ])
         let storyboard = UIStoryboard(name: "ShareView", bundle: nil)
         if let shareViewController = storyboard.instantiateViewController(withIdentifier: "ShareViewController") as? ShareViewController {
-            
             var bmiString = "0.00"
             var descriptionText = "Bilinmiyor"
 
@@ -155,17 +177,16 @@ class ViOPopUpViewController: UIViewController {
                let image = convertViewToImage(view: shareView),
                let imageData = image.pngData() {
 
-                
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd_HH-mm-ss"
                 let dateString = dateFormatter.string(from: Date())
-                
+
                 let safeBmiString = bmiString.replacingOccurrences(of: " ", with: "")
                                              .replacingOccurrences(of: "/", with: "-")
                                              .replacingOccurrences(of: "m²", with: "m2")
 
                 let fileName = "Bmi_\(safeBmiString)kg-m2_\(dateString).png"
-                
+
                 if let fileURL = saveImageToDocuments(imageData: imageData, fileName: fileName) {
                     print("Görsel kaydedildi: \(fileName)")
 
@@ -173,6 +194,11 @@ class ViOPopUpViewController: UIViewController {
                     present(activityViewController, animated: true, completion: nil)
                 }
             } else {
+                let error = NSError(domain: "ViO_App", code: 3001, userInfo: [
+                    NSLocalizedDescriptionKey: "Paylaşım sırasında view nil ya da görsel oluşturulamadı"
+                ])
+                Crashlytics.crashlytics().record(error: error)
+
                 print("ShareView is nil veya görsel oluşturulamadı.")
             }
         }
@@ -195,7 +221,13 @@ class ViOPopUpViewController: UIViewController {
     
     func convertViewToImage(view: UIView) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, UIScreen.main.scale)
-        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        guard let context = UIGraphicsGetCurrentContext() else {
+            let error = NSError(domain: "ViO_App", code: 3002, userInfo: [
+                NSLocalizedDescriptionKey: "Görsel render için context alınamadı"
+            ])
+            Crashlytics.crashlytics().record(error: error)
+            return nil
+        }
         view.layer.render(in: context)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
