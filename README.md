@@ -18,12 +18,15 @@ VIOApp, kullanıcıların boy ve kilo bilgilerini girerek Vücut Kitle İndeksle
 - Sonuçların kategorik değerlendirmesi
 - Tema seçenekleri (Açık/Koyu)
 - Sonuç paylaşım özelliği
+- Firebase Analytics ile event takibi yapılmakta
+- Firebase Crashlytics ile uygulama çökme takibi aktif olarak çalışmaktadır
 
 ## Kullanılan Teknolojiler
 
 - Swift
 - UIKit
 - Xcode
+- Firebase
 
 ## Kurulum
 
