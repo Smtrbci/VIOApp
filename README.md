@@ -7,6 +7,7 @@
   <img src="https://github.com/user-attachments/assets/666497b0-1f84-4edf-a2fc-e26eccb315e2" width="150"/>
 </p>
 
+🇹🇷 TR
 # VIOApp
 
 VIOApp, kullanıcıların boy ve kilo bilgilerini girerek Vücut Kitle İndekslerini (BMI) hesaplamalarını sağlayan basit bir iOS uygulamasıdır.
@@ -34,9 +35,7 @@ VIOApp, kullanıcıların boy ve kilo bilgilerini girerek Vücut Kitle İndeksle
    ```bash
    git clone https://github.com/Smtrbci/VIOApp.git
 
-
-
-ENG
+🇬🇧 ENG
 
 # VIOApp
 
