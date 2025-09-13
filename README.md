@@ -33,3 +33,34 @@ VIOApp, kullanıcıların boy ve kilo bilgilerini girerek Vücut Kitle İndeksle
 1. Bu depoyu klonlayın:
    ```bash
    git clone https://github.com/Smtrbci/VIOApp.git
+
+
+
+ENG
+
+# VIOApp
+
+VIOApp is a simple iOS application that allows users to calculate their Body Mass Index (BMI) by entering their height and weight information.
+
+## Features
+
+	•	User-friendly interface
+	•	Fast and accurate BMI calculation
+	•	Categorical evaluation of results
+	•	Theme options (Light/Dark Mode)
+	•	Result sharing feature
+	•	Event tracking with Firebase Analytics
+	•	Crash reporting enabled with Firebase Crashlytics
+
+## Technologies Used
+
+	•	Swift
+	•	UIKit
+	•	Xcode
+	•	Firebase
+
+## Installation
+
+1. Clone this repository:
+  ```bash
+  git clone https://github.com/Smtrbci/VIOApp.git
